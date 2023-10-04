@@ -3,7 +3,7 @@ let btn = document.getElementById('btn');
 btn.addEventListener('click',addToDisplay);
 console.log('hello');
 async function getdata(item){
-    let raw = await fetch(`http://www.omdbapi.com/?apikey=df6d4496&s=${item}`);
+    let raw = await fetch(`https://www.omdbapi.com/?apikey=df6d4496&s=${item}`);
     let data = await raw.json();
 
     let arr = data.Search;

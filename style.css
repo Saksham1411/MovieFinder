@@ -55,7 +55,7 @@ input{
     font-weight: 300;
     word-wrap: break-word;
 }
-@media (max-width:400px) {
+@media (max-width:476px) {
     nav div{
         display: flex;
         gap: 0.3rem;

@@ -33,7 +33,7 @@ async function getdata() {
 function addToDisplay(arr, type) {
     output = '';
     console.log(arr);
-    if (arr === null) {
+    if (arr === null || arr.length === 0) {
         document.getElementById('main').innerHTML = "no movie found";
     } else {
         arr.forEach((i, idx) => {
@@ -53,24 +53,33 @@ function addToDisplay(arr, type) {
             if(type === 'rem'){
                 output += `
                     <div class=hide>
-                        <button class='btn' id='rem'>Remove</button>
+                        <button class='btn' id='rem' key='${idx}'>Remove</button>
                     </div>
                 </div>`
             }
         });
         document.getElementById('main').innerHTML = output;
-        initFav();
+        init();
     }
 }
 
-function initFav() {
+function init() {
     let favBtn = document.querySelectorAll('#fav');
     favBtn.forEach(i => {
         i.addEventListener('click', (e) => {
             let idx = e.target.getAttribute('key');
-            addToFav(ExtractedData[idx]);
+            addToFav(ExtractedData[idx]);o
         })
     });
+    let remBtn = document.querySelectorAll('#rem');
+    remBtn.forEach(i => {
+        i.addEventListener('click', (e) => {
+            let idx = e.target.getAttribute('key');
+            console.log(idx);
+            let fav = JSON.parse(localStorage.getItem('fav'));
+            removeFromFav(fav[idx]);
+        })
+    }); 
 }
 
 function addToFav(item) {
@@ -90,4 +99,13 @@ function addToFav(item) {
     })
     if (!flag) fav.push(item);
     localStorage.setItem('fav', JSON.stringify(fav));
+}
+
+function removeFromFav(item){
+    let fav = JSON.parse(localStorage.getItem('fav'));
+
+    fav = fav.filter(i=> i.imdbID!==item.imdbID);
+    console.log(item);
+    localStorage.setItem('fav',JSON.stringify(fav));
+    addToDisplay(fav,'rem');
 }

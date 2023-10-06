@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ nav{
     justify-content: space-between;
 }
 nav p{
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Marcellus', serif;
     text-decoration: none;
     font-size: 35px;
 }
@@ -39,7 +39,7 @@ nav .form{
     padding: .2rem;
     background-color: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
 }

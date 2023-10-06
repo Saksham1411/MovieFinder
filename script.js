@@ -68,7 +68,7 @@ function init() {
     favBtn.forEach(i => {
         i.addEventListener('click', (e) => {
             let idx = e.target.getAttribute('key');
-            addToFav(ExtractedData[idx]);o
+            addToFav(ExtractedData[idx]);
         })
     });
     let remBtn = document.querySelectorAll('#rem');
@@ -83,6 +83,7 @@ function init() {
 }
 
 function addToFav(item) {
+    //making or geeting storage
     let fav;
     if (localStorage.getItem('fav') == null) {
         fav = [];
@@ -90,8 +91,13 @@ function addToFav(item) {
     } else {
         fav = JSON.parse(localStorage.getItem('fav'));
     }
+    //custom alert
+    showAlert();
+    setTimeout(()=>{
+        document.querySelector('.alert').remove();
+    },1000);
 
-    //adding
+    //adding to Storage
     console.log(item);
     let flag = false;
     fav.some(i => {
@@ -109,3 +115,13 @@ function removeFromFav(item){
     localStorage.setItem('fav',JSON.stringify(fav));
     addToDisplay(fav,'rem');
 }
+
+function showAlert(){
+    let div = document.createElement('div');
+    div.innerHTML = '<i class="fa-solid fa-check"></i> ADDED';
+    div.classList = 'alert';
+    div.style.top = window.scrollY + 70 + 'px';
+    console.log(div);
+    document.querySelector('body').append(div);
+}
+// showAlert();

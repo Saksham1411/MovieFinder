@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -21,12 +22,22 @@ nav{
     background-color: #393E46;
     justify-content: space-between;
 }
+nav p{
+    font-family: 'Great Vibes', cursive;
+    text-decoration: none;
+    font-size: 35px;
+}
+nav .right{
+    display: flex;
+    gap: 2.5rem;
+}
 .btn{
     padding: .2rem;
     background-color: transparent;
     border: none;
     font-size: 16px;
     font-weight: 600;
+    cursor: pointer;
 }
 input{
     padding: 0.3rem;

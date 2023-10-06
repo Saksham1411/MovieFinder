@@ -31,6 +31,10 @@ nav .right{
     display: flex;
     gap: 2.5rem;
 }
+nav .form{
+    display: flex;
+    gap: 0.3rem;
+}
 .btn{
     padding: .2rem;
     background-color: transparent;
@@ -106,13 +110,25 @@ input{
 }
 
 @media (max-width:476px) {
-    nav div{
-        display: flex;
-        gap: 0.3rem;
-        justify-content: end;
+    nav{
+        padding:1rem .5rem ;
     }
-    input{
+    nav p{
+        font-size: 22px;
+    
+    }
+    nav .right{
+        gap:0.5rem;
+    }
+    nav .form{
         width: 50%;
+        object-fit: contain;
+    }
+    nav .btn{
+        font-size: 14px;
+    }
+    .form input{
+        width: 6rem;
     }
     img{
         width: 50%;
